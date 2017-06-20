@@ -12,6 +12,10 @@
 		6B359CD21EF9B8D700F3E11A /* BPGRoverPhoto.m in Sources */ = {isa = PBXBuildFile; fileRef = 6B359CD11EF9B8D700F3E11A /* BPGRoverPhoto.m */; };
 		6B359CD51EF9B93200F3E11A /* BPGSol.m in Sources */ = {isa = PBXBuildFile; fileRef = 6B359CD41EF9B93200F3E11A /* BPGSol.m */; };
 		6B359CD81EF9CA0900F3E11A /* BPGMarsRoverClient.m in Sources */ = {isa = PBXBuildFile; fileRef = 6B359CD71EF9CA0900F3E11A /* BPGMarsRoverClient.m */; };
+		6BF01D451EF9DA0E00DAC4E1 /* BPGMarsRoverListTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6BF01D441EF9DA0E00DAC4E1 /* BPGMarsRoverListTableViewController.m */; };
+		6BF01D481EF9DABD00DAC4E1 /* BPGSolDatesTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6BF01D471EF9DABD00DAC4E1 /* BPGSolDatesTableViewController.m */; };
+		6BF01D4B1EF9DB2200DAC4E1 /* BPGSolPhotosCollectionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6BF01D4A1EF9DB2200DAC4E1 /* BPGSolPhotosCollectionViewController.m */; };
+		6BF01D4E1EF9DB3C00DAC4E1 /* BPGMarsPhotoCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 6BF01D4D1EF9DB3C00DAC4E1 /* BPGMarsPhotoCollectionViewCell.m */; };
 		9DE7D67F1E4E26CF004CBBD8 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9DE7D6731E4E26CF004CBBD8 /* Assets.xcassets */; };
 		9DE7D6801E4E26CF004CBBD8 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9DE7D6741E4E26CF004CBBD8 /* LaunchScreen.storyboard */; };
 		9DE7D6811E4E26CF004CBBD8 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9DE7D6761E4E26CF004CBBD8 /* Main.storyboard */; };
@@ -29,6 +33,14 @@
 		6B359CD41EF9B93200F3E11A /* BPGSol.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BPGSol.m; sourceTree = "<group>"; };
 		6B359CD61EF9CA0900F3E11A /* BPGMarsRoverClient.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BPGMarsRoverClient.h; sourceTree = "<group>"; };
 		6B359CD71EF9CA0900F3E11A /* BPGMarsRoverClient.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BPGMarsRoverClient.m; sourceTree = "<group>"; };
+		6BF01D431EF9DA0E00DAC4E1 /* BPGMarsRoverListTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BPGMarsRoverListTableViewController.h; sourceTree = "<group>"; };
+		6BF01D441EF9DA0E00DAC4E1 /* BPGMarsRoverListTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BPGMarsRoverListTableViewController.m; sourceTree = "<group>"; };
+		6BF01D461EF9DABD00DAC4E1 /* BPGSolDatesTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BPGSolDatesTableViewController.h; sourceTree = "<group>"; };
+		6BF01D471EF9DABD00DAC4E1 /* BPGSolDatesTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BPGSolDatesTableViewController.m; sourceTree = "<group>"; };
+		6BF01D491EF9DB2200DAC4E1 /* BPGSolPhotosCollectionViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BPGSolPhotosCollectionViewController.h; sourceTree = "<group>"; };
+		6BF01D4A1EF9DB2200DAC4E1 /* BPGSolPhotosCollectionViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BPGSolPhotosCollectionViewController.m; sourceTree = "<group>"; };
+		6BF01D4C1EF9DB3C00DAC4E1 /* BPGMarsPhotoCollectionViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BPGMarsPhotoCollectionViewCell.h; sourceTree = "<group>"; };
+		6BF01D4D1EF9DB3C00DAC4E1 /* BPGMarsPhotoCollectionViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BPGMarsPhotoCollectionViewCell.m; sourceTree = "<group>"; };
 		9DE7D6581E4E26AC004CBBD8 /* Rover.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Rover.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		9DE7D6731E4E26CF004CBBD8 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		9DE7D6751E4E26CF004CBBD8 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -112,6 +124,8 @@
 		9DE7D6891E4E2702004CBBD8 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				6BF01D4C1EF9DB3C00DAC4E1 /* BPGMarsPhotoCollectionViewCell.h */,
+				6BF01D4D1EF9DB3C00DAC4E1 /* BPGMarsPhotoCollectionViewCell.m */,
 			);
 			name = Views;
 			sourceTree = "<group>";
@@ -141,6 +155,12 @@
 		9DE7D68C1E4E2705004CBBD8 /* View Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				6BF01D431EF9DA0E00DAC4E1 /* BPGMarsRoverListTableViewController.h */,
+				6BF01D441EF9DA0E00DAC4E1 /* BPGMarsRoverListTableViewController.m */,
+				6BF01D461EF9DABD00DAC4E1 /* BPGSolDatesTableViewController.h */,
+				6BF01D471EF9DABD00DAC4E1 /* BPGSolDatesTableViewController.m */,
+				6BF01D491EF9DB2200DAC4E1 /* BPGSolPhotosCollectionViewController.h */,
+				6BF01D4A1EF9DB2200DAC4E1 /* BPGSolPhotosCollectionViewController.m */,
 			);
 			name = "View Controllers";
 			sourceTree = "<group>";
@@ -219,12 +239,16 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				6BF01D4B1EF9DB2200DAC4E1 /* BPGSolPhotosCollectionViewController.m in Sources */,
 				6B359CD81EF9CA0900F3E11A /* BPGMarsRoverClient.m in Sources */,
 				6B359CCF1EF9B8C200F3E11A /* BPGMarsRover.m in Sources */,
 				6B359CD51EF9B93200F3E11A /* BPGSol.m in Sources */,
+				6BF01D4E1EF9DB3C00DAC4E1 /* BPGMarsPhotoCollectionViewCell.m in Sources */,
 				9DE7D6841E4E26CF004CBBD8 /* main.m in Sources */,
+				6BF01D481EF9DABD00DAC4E1 /* BPGSolDatesTableViewController.m in Sources */,
 				9DE7D6831E4E26CF004CBBD8 /* DMNRoverAppDelegate.m in Sources */,
 				6B359CD21EF9B8D700F3E11A /* BPGRoverPhoto.m in Sources */,
+				6BF01D451EF9DA0E00DAC4E1 /* BPGMarsRoverListTableViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
