@@ -11,6 +11,7 @@
 		6B359CCF1EF9B8C200F3E11A /* BPGMarsRover.m in Sources */ = {isa = PBXBuildFile; fileRef = 6B359CCE1EF9B8C200F3E11A /* BPGMarsRover.m */; };
 		6B359CD21EF9B8D700F3E11A /* BPGRoverPhoto.m in Sources */ = {isa = PBXBuildFile; fileRef = 6B359CD11EF9B8D700F3E11A /* BPGRoverPhoto.m */; };
 		6B359CD51EF9B93200F3E11A /* BPGSol.m in Sources */ = {isa = PBXBuildFile; fileRef = 6B359CD41EF9B93200F3E11A /* BPGSol.m */; };
+		6B359CD81EF9CA0900F3E11A /* BPGMarsRoverClient.m in Sources */ = {isa = PBXBuildFile; fileRef = 6B359CD71EF9CA0900F3E11A /* BPGMarsRoverClient.m */; };
 		9DE7D67F1E4E26CF004CBBD8 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9DE7D6731E4E26CF004CBBD8 /* Assets.xcassets */; };
 		9DE7D6801E4E26CF004CBBD8 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9DE7D6741E4E26CF004CBBD8 /* LaunchScreen.storyboard */; };
 		9DE7D6811E4E26CF004CBBD8 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9DE7D6761E4E26CF004CBBD8 /* Main.storyboard */; };
@@ -26,6 +27,8 @@
 		6B359CD11EF9B8D700F3E11A /* BPGRoverPhoto.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BPGRoverPhoto.m; sourceTree = "<group>"; };
 		6B359CD31EF9B93200F3E11A /* BPGSol.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BPGSol.h; sourceTree = "<group>"; };
 		6B359CD41EF9B93200F3E11A /* BPGSol.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BPGSol.m; sourceTree = "<group>"; };
+		6B359CD61EF9CA0900F3E11A /* BPGMarsRoverClient.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BPGMarsRoverClient.h; sourceTree = "<group>"; };
+		6B359CD71EF9CA0900F3E11A /* BPGMarsRoverClient.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BPGMarsRoverClient.m; sourceTree = "<group>"; };
 		9DE7D6581E4E26AC004CBBD8 /* Rover.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Rover.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		9DE7D6731E4E26CF004CBBD8 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		9DE7D6751E4E26CF004CBBD8 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -129,6 +132,8 @@
 		9DE7D68B1E4E2705004CBBD8 /* Model Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				6B359CD61EF9CA0900F3E11A /* BPGMarsRoverClient.h */,
+				6B359CD71EF9CA0900F3E11A /* BPGMarsRoverClient.m */,
 			);
 			name = "Model Controllers";
 			sourceTree = "<group>";
@@ -214,6 +219,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				6B359CD81EF9CA0900F3E11A /* BPGMarsRoverClient.m in Sources */,
 				6B359CCF1EF9B8C200F3E11A /* BPGMarsRover.m in Sources */,
 				6B359CD51EF9B93200F3E11A /* BPGSol.m in Sources */,
 				9DE7D6841E4E26CF004CBBD8 /* main.m in Sources */,
