@@ -6,6 +6,8 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12089"/>
+        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -35,7 +37,7 @@
                                     </subviews>
                                 </tableViewCellContentView>
                                 <connections>
-                                    <segue destination="7q4-NQ-CMc" kind="show" id="jti-Tf-TrL"/>
+                                    <segue destination="7q4-NQ-CMc" kind="show" identifier="toSolDateWithPhotos" id="jti-Tf-TrL"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>
@@ -50,10 +52,10 @@
             </objects>
             <point key="canvasLocation" x="620" y="93.103448275862078"/>
         </scene>
-        <!--Table View Controller-->
+        <!--Sol Dates Table View Controller-->
         <scene sceneID="cJX-jb-4th">
             <objects>
-                <tableViewController id="7q4-NQ-CMc" sceneMemberID="viewController">
+                <tableViewController id="7q4-NQ-CMc" customClass="BPGSolDatesTableViewController" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="nxV-xx-gRw">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -83,7 +85,7 @@
                                     </subviews>
                                 </tableViewCellContentView>
                                 <connections>
-                                    <segue destination="EGk-Re-M2t" kind="show" id="6Ta-aE-4Bn"/>
+                                    <segue destination="EGk-Re-M2t" kind="show" identifier="toPhotoCollectionView" id="6Ta-aE-4Bn"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>
@@ -97,28 +99,31 @@
             </objects>
             <point key="canvasLocation" x="1410" y="93"/>
         </scene>
-        <!--Collection View Controller-->
+        <!--Sol Photos Collection View Controller-->
         <scene sceneID="Wgv-RY-cRm">
             <objects>
-                <collectionViewController id="EGk-Re-M2t" sceneMemberID="viewController">
+                <collectionViewController id="EGk-Re-M2t" customClass="BPGSolPhotosCollectionViewController" sceneMemberID="viewController">
                     <collectionView key="view" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" id="6XI-eO-14K">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="NBL-f6-zXE">
-                            <size key="itemSize" width="91" height="91"/>
+                            <size key="itemSize" width="180" height="150"/>
                             <size key="headerReferenceSize" width="0.0" height="0.0"/>
                             <size key="footerReferenceSize" width="0.0" height="0.0"/>
                             <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                         </collectionViewFlowLayout>
                         <cells>
-                            <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="1Fx-lN-BkL">
-                                <rect key="frame" x="0.0" y="0.0" width="91" height="91"/>
+                            <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="marsPhotoCell" id="1Fx-lN-BkL" customClass="BPGMarsPhotoCollectionViewCell">
+                                <rect key="frame" x="0.0" y="0.0" width="180" height="150"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
-                                    <rect key="frame" x="0.0" y="0.0" width="91" height="91"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="180" height="150"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                 </view>
+                                <connections>
+                                    <segue destination="NYA-mJ-DL9" kind="show" identifier="toDetailView" id="cTt-jj-Tmq"/>
+                                </connections>
                             </collectionViewCell>
                         </cells>
                         <connections>
@@ -129,7 +134,65 @@
                 </collectionViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="leX-ye-Bhf" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2184.8000000000002" y="91.304347826086968"/>
+            <point key="canvasLocation" x="2124" y="90.404797601199405"/>
+        </scene>
+        <!--Mars Photo Detail View Controller-->
+        <scene sceneID="NO6-Dk-RNO">
+            <objects>
+                <viewController id="NYA-mJ-DL9" customClass="BPGMarsPhotoDetailViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="TQ6-kT-d1A"/>
+                        <viewControllerLayoutGuide type="bottom" id="eoL-vY-ShN"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="Sus-n0-swi">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="JI1-qH-c6Y">
+                                <rect key="frame" x="16" y="293" width="343" height="81.5"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Camera:" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dBT-2w-jad">
+                                        <rect key="frame" x="0.0" y="0.0" width="343" height="20.5"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Sol:" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="EC4-ie-FTl">
+                                        <rect key="frame" x="0.0" y="30.5" width="343" height="20.5"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Earth Date:" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4Fe-LG-vGu">
+                                        <rect key="frame" x="0.0" y="61" width="343" height="20.5"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                            </stackView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="bJS-66-DUf">
+                                <rect key="frame" x="43" y="79" width="289" height="198.5"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="bJS-66-DUf" secondAttribute="height" multiplier="16:11" id="Xar-QM-CIb"/>
+                                </constraints>
+                            </imageView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="JI1-qH-c6Y" firstAttribute="centerX" secondItem="Sus-n0-swi" secondAttribute="centerX" id="29B-Sw-jXy"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="JI1-qH-c6Y" secondAttribute="trailing" id="G43-Xd-RFu"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="bJS-66-DUf" secondAttribute="trailing" constant="27" id="PM9-m4-bLM"/>
+                            <constraint firstItem="bJS-66-DUf" firstAttribute="top" secondItem="TQ6-kT-d1A" secondAttribute="bottom" constant="15" id="VRS-iR-zSJ"/>
+                            <constraint firstItem="JI1-qH-c6Y" firstAttribute="leading" secondItem="Sus-n0-swi" secondAttribute="leadingMargin" id="gXd-pu-u38"/>
+                            <constraint firstItem="bJS-66-DUf" firstAttribute="leading" secondItem="Sus-n0-swi" secondAttribute="leadingMargin" constant="27" id="yKS-Ij-NBW"/>
+                            <constraint firstItem="JI1-qH-c6Y" firstAttribute="centerY" secondItem="Sus-n0-swi" secondAttribute="centerY" id="zhF-F0-MBH"/>
+                        </constraints>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="r5o-an-p6P" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2832.8000000000002" y="91.304347826086968"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="lmu-4y-WlI">

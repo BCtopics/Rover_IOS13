@@ -16,6 +16,7 @@
 		6BF01D481EF9DABD00DAC4E1 /* BPGSolDatesTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6BF01D471EF9DABD00DAC4E1 /* BPGSolDatesTableViewController.m */; };
 		6BF01D4B1EF9DB2200DAC4E1 /* BPGSolPhotosCollectionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6BF01D4A1EF9DB2200DAC4E1 /* BPGSolPhotosCollectionViewController.m */; };
 		6BF01D4E1EF9DB3C00DAC4E1 /* BPGMarsPhotoCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 6BF01D4D1EF9DB3C00DAC4E1 /* BPGMarsPhotoCollectionViewCell.m */; };
+		6BF01D511EF9DBE500DAC4E1 /* BPGMarsPhotoDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6BF01D501EF9DBE500DAC4E1 /* BPGMarsPhotoDetailViewController.m */; };
 		9DE7D67F1E4E26CF004CBBD8 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9DE7D6731E4E26CF004CBBD8 /* Assets.xcassets */; };
 		9DE7D6801E4E26CF004CBBD8 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9DE7D6741E4E26CF004CBBD8 /* LaunchScreen.storyboard */; };
 		9DE7D6811E4E26CF004CBBD8 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9DE7D6761E4E26CF004CBBD8 /* Main.storyboard */; };
@@ -41,6 +42,8 @@
 		6BF01D4A1EF9DB2200DAC4E1 /* BPGSolPhotosCollectionViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BPGSolPhotosCollectionViewController.m; sourceTree = "<group>"; };
 		6BF01D4C1EF9DB3C00DAC4E1 /* BPGMarsPhotoCollectionViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BPGMarsPhotoCollectionViewCell.h; sourceTree = "<group>"; };
 		6BF01D4D1EF9DB3C00DAC4E1 /* BPGMarsPhotoCollectionViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BPGMarsPhotoCollectionViewCell.m; sourceTree = "<group>"; };
+		6BF01D4F1EF9DBE500DAC4E1 /* BPGMarsPhotoDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BPGMarsPhotoDetailViewController.h; sourceTree = "<group>"; };
+		6BF01D501EF9DBE500DAC4E1 /* BPGMarsPhotoDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BPGMarsPhotoDetailViewController.m; sourceTree = "<group>"; };
 		9DE7D6581E4E26AC004CBBD8 /* Rover.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Rover.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		9DE7D6731E4E26CF004CBBD8 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		9DE7D6751E4E26CF004CBBD8 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -161,6 +164,8 @@
 				6BF01D471EF9DABD00DAC4E1 /* BPGSolDatesTableViewController.m */,
 				6BF01D491EF9DB2200DAC4E1 /* BPGSolPhotosCollectionViewController.h */,
 				6BF01D4A1EF9DB2200DAC4E1 /* BPGSolPhotosCollectionViewController.m */,
+				6BF01D4F1EF9DBE500DAC4E1 /* BPGMarsPhotoDetailViewController.h */,
+				6BF01D501EF9DBE500DAC4E1 /* BPGMarsPhotoDetailViewController.m */,
 			);
 			name = "View Controllers";
 			sourceTree = "<group>";
@@ -243,6 +248,7 @@
 				6B359CD81EF9CA0900F3E11A /* BPGMarsRoverClient.m in Sources */,
 				6B359CCF1EF9B8C200F3E11A /* BPGMarsRover.m in Sources */,
 				6B359CD51EF9B93200F3E11A /* BPGSol.m in Sources */,
+				6BF01D511EF9DBE500DAC4E1 /* BPGMarsPhotoDetailViewController.m in Sources */,
 				6BF01D4E1EF9DB3C00DAC4E1 /* BPGMarsPhotoCollectionViewCell.m in Sources */,
 				9DE7D6841E4E26CF004CBBD8 /* main.m in Sources */,
 				6BF01D481EF9DABD00DAC4E1 /* BPGSolDatesTableViewController.m in Sources */,
