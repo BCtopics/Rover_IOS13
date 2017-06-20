@@ -8,6 +8,9 @@
 
 /* Begin PBXBuildFile section */
 		46E1D4FE1E65DCEB00DDAF9A /* APIKeys.plist in Resources */ = {isa = PBXBuildFile; fileRef = 46E1D4FD1E65DCEB00DDAF9A /* APIKeys.plist */; };
+		6B359CCF1EF9B8C200F3E11A /* BPGMarsRover.m in Sources */ = {isa = PBXBuildFile; fileRef = 6B359CCE1EF9B8C200F3E11A /* BPGMarsRover.m */; };
+		6B359CD21EF9B8D700F3E11A /* BPGRoverPhoto.m in Sources */ = {isa = PBXBuildFile; fileRef = 6B359CD11EF9B8D700F3E11A /* BPGRoverPhoto.m */; };
+		6B359CD51EF9B93200F3E11A /* BPGSol.m in Sources */ = {isa = PBXBuildFile; fileRef = 6B359CD41EF9B93200F3E11A /* BPGSol.m */; };
 		9DE7D67F1E4E26CF004CBBD8 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9DE7D6731E4E26CF004CBBD8 /* Assets.xcassets */; };
 		9DE7D6801E4E26CF004CBBD8 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9DE7D6741E4E26CF004CBBD8 /* LaunchScreen.storyboard */; };
 		9DE7D6811E4E26CF004CBBD8 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9DE7D6761E4E26CF004CBBD8 /* Main.storyboard */; };
@@ -17,6 +20,12 @@
 
 /* Begin PBXFileReference section */
 		46E1D4FD1E65DCEB00DDAF9A /* APIKeys.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = APIKeys.plist; sourceTree = "<group>"; };
+		6B359CCD1EF9B8C200F3E11A /* BPGMarsRover.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BPGMarsRover.h; sourceTree = "<group>"; };
+		6B359CCE1EF9B8C200F3E11A /* BPGMarsRover.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BPGMarsRover.m; sourceTree = "<group>"; };
+		6B359CD01EF9B8D700F3E11A /* BPGRoverPhoto.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BPGRoverPhoto.h; sourceTree = "<group>"; };
+		6B359CD11EF9B8D700F3E11A /* BPGRoverPhoto.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BPGRoverPhoto.m; sourceTree = "<group>"; };
+		6B359CD31EF9B93200F3E11A /* BPGSol.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BPGSol.h; sourceTree = "<group>"; };
+		6B359CD41EF9B93200F3E11A /* BPGSol.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BPGSol.m; sourceTree = "<group>"; };
 		9DE7D6581E4E26AC004CBBD8 /* Rover.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Rover.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		9DE7D6731E4E26CF004CBBD8 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		9DE7D6751E4E26CF004CBBD8 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -107,6 +116,12 @@
 		9DE7D68A1E4E2704004CBBD8 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				6B359CCD1EF9B8C200F3E11A /* BPGMarsRover.h */,
+				6B359CCE1EF9B8C200F3E11A /* BPGMarsRover.m */,
+				6B359CD01EF9B8D700F3E11A /* BPGRoverPhoto.h */,
+				6B359CD11EF9B8D700F3E11A /* BPGRoverPhoto.m */,
+				6B359CD31EF9B93200F3E11A /* BPGSol.h */,
+				6B359CD41EF9B93200F3E11A /* BPGSol.m */,
 			);
 			name = Model;
 			sourceTree = "<group>";
@@ -157,7 +172,7 @@
 				TargetAttributes = {
 					9DE7D6571E4E26AC004CBBD8 = {
 						CreatedOnToolsVersion = 8.1;
-						DevelopmentTeam = 357NQPN89X;
+						DevelopmentTeam = N8EMAYLL43;
 						ProvisioningStyle = Automatic;
 					};
 				};
@@ -199,8 +214,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				6B359CCF1EF9B8C200F3E11A /* BPGMarsRover.m in Sources */,
+				6B359CD51EF9B93200F3E11A /* BPGSol.m in Sources */,
 				9DE7D6841E4E26CF004CBBD8 /* main.m in Sources */,
 				9DE7D6831E4E26CF004CBBD8 /* DMNRoverAppDelegate.m in Sources */,
+				6B359CD21EF9B8D700F3E11A /* BPGRoverPhoto.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -320,10 +338,11 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				DEVELOPMENT_TEAM = 357NQPN89X;
+				DEVELOPMENT_TEAM = N8EMAYLL43;
 				INFOPLIST_FILE = Resources/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.3;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.DevMountain.Rover;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.BradleyGilmore.Rover-IOS13";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Debug;
@@ -332,10 +351,11 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				DEVELOPMENT_TEAM = 357NQPN89X;
+				DEVELOPMENT_TEAM = N8EMAYLL43;
 				INFOPLIST_FILE = Resources/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.3;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.DevMountain.Rover;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.BradleyGilmore.Rover-IOS13";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Release;
