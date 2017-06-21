@@ -7,8 +7,11 @@
 //
 
 #import "BPGMarsRoverListTableViewController.h"
+#import "BPGMarsRoverClient.h"
 
 @interface BPGMarsRoverListTableViewController ()
+
+@property (nonatomic, copy) NSArray *internalRovers;
 
 @end
 
@@ -17,27 +20,53 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    // Uncomment the following line to preserve selection between presentations.
-    // self.clearsSelectionOnViewWillAppear = NO;
+    NSMutableArray *rovers = [NSMutableArray array];
+    dispatch_group_t group = dispatch_group_create();
     
-    // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-    // self.navigationItem.rightBarButtonItem = self.editButtonItem;
+    dispatch_group_enter(group);
+    BPGMarsRoverClient *client = [[BPGMarsRoverClient alloc] init];
+    [client fetchAllMarsRoversWithCompletion:^(NSArray *roverNames, NSError *error) {
+        if (error) {
+            NSLog(@"Error fetching list of mars rovers: %@", error);
+            return;
+        }
+        
+        dispatch_queue_t resultsQueue = dispatch_queue_create("com.BradleyGilmore.roverFetchResultsQueue", 0);
+        
+        for (NSString *name in roverNames) {
+            dispatch_group_enter(group);
+            [client fetchMissionManifestForRoverNamed:name completion:^(BPGMarsRover *rover, NSError *error) {
+                if (error) {
+                    NSLog(@"Error fetching list of mars rovers: %@", error);
+                    dispatch_group_leave(group);
+                    return;
+                }
+                
+                dispatch_async(resultsQueue, ^{
+                    [rovers addObject:rover];
+                    dispatch_group_leave(group);
+                });
+            }];
+        }
+        
+        dispatch_group_leave(group);
+    }];
+    
+    dispatch_group_wait(group, DISPATCH_TIME_FOREVER);
+    self.internalRovers = rovers;
+
 }
 
-- (void)didReceiveMemoryWarning {
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
-}
+
+
 
 #pragma mark - Table view data source
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
-#warning Incomplete implementation, return the number of sections
     return 0;
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-#warning Incomplete implementation, return the number of rows
     return 0;
 }
 
