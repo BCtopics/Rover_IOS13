@@ -7,7 +7,12 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "BPGMarsRover.h"
+#import "BPGSol.h"
 
 @interface BPGSolPhotosCollectionViewController : UICollectionViewController
+
+@property (nonatomic, strong) BPGMarsRover *rover;
+@property (nonatomic, strong) BPGSol *sol;
 
 @end

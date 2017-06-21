@@ -10,4 +10,15 @@
 
 @implementation BPGSol
 
+- (instancetype)initWithDictionary:(NSDictionary *)dictionary
+{
+    self = [super init];
+    if (self) {
+        _sol = [dictionary[@"sol"] integerValue];
+        _numberOfPhotos = [dictionary[@"total_photos"] integerValue];
+        _cameras = [dictionary[@"cameras"] copy];
+    }
+    return self;
+}
+
 @end

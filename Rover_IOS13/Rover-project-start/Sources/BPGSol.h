@@ -14,7 +14,7 @@
 
 #pragma mark - Properties
 
-@property (nonatomic, readonly) NSString *sol;
+@property (nonatomic, readonly) NSInteger *sol;
 @property (nonatomic, readonly) NSInteger *numberOfPhotos;
 @property (nonatomic, strong, readonly) NSArray *cameras; // Make this an array of strings.
 

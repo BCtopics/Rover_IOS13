@@ -7,6 +7,7 @@
 //
 
 #import "BPGMarsRover.h"
+#import "BPGSol.h"
 
 @implementation BPGMarsRover
 
@@ -40,14 +41,14 @@
         _maxEarthDate = [[[self class] dateFormatter] dateFromString:maxDateString];
         _solphotos = [dictionary[@"total_photos"] integerValue];
         
-//        NSArray *solDescriptionDictionaries = dictionary[@"photos"];
-//        NSMutableArray *solDescriptions = [NSMutableArray array];
-//        for (NSDictionary *dict in solDescriptionDictionaries) {
-//            BPGSolDescription *solDescription = [[BPGSolDescription alloc] initWithDictionary:dict];
-//            if (!solDescription) { continue; }
-//            [solDescriptions addObject:solDescription];
-//        }
-//        _solDescriptions = [solDescriptions copy];
+        NSArray *solDescriptionDictionaries = dictionary[@"photos"];
+        NSMutableArray *solDescriptions = [NSMutableArray array];
+        for (NSDictionary *dict in solDescriptionDictionaries) {
+            BPGSol *solDescription = [[BPGSol alloc] initWithDictionary:dict];
+            if (!solDescription) { continue; }
+            [solDescriptions addObject:solDescription];
+        }
+        _solDescriptions = [solDescriptions copy];
     }
     return self;
 }
