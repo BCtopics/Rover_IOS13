@@ -8,6 +8,8 @@
 
 #import "BPGMarsRoverListTableViewController.h"
 #import "BPGMarsRoverClient.h"
+#import "BPGMarsRover.h"
+#import "BPGSolDatesTableViewController.h"
 
 @interface BPGMarsRoverListTableViewController ()
 
@@ -54,31 +56,26 @@
     
     dispatch_group_wait(group, DISPATCH_TIME_FOREVER);
     self.internalRovers = rovers;
-
+    
 }
-
-
-
 
 #pragma mark - Table view data source
 
-- (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
-    return 0;
-}
-
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-    return 0;
+    return self.internalRovers.count;
 }
 
-/*
+
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:<#@"reuseIdentifier"#> forIndexPath:indexPath];
+    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"marsRoverCell" forIndexPath:indexPath];
     
-    // Configure the cell...
+    BPGMarsRover *rover = self.internalRovers[indexPath.row];
+    
+    cell.textLabel.text = rover.name;
     
     return cell;
 }
-*/
+
 
 /*
 // Override to support conditional editing of the table view.
@@ -114,14 +111,17 @@
 }
 */
 
-/*
+
 #pragma mark - Navigation
 
 // In a storyboard-based application, you will often want to do a little preparation before navigation
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
+    if ([segue.identifier isEqualToString:@"toSolDateWithPhotos"]) {
+        BPGSolDatesTableViewController *destinationVC = segue.destinationViewController;
+        NSIndexPath *indexPath = [self.tableView indexPathForSelectedRow];
+        destinationVC.rover = self.internalRovers[indexPath.row];
+    }
 }
-*/
+
 
 @end

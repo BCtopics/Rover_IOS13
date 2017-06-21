@@ -58,14 +58,13 @@
         NSDictionary *jsonDict = [NSJSONSerialization JSONObjectWithData:data options:0 error:&error];
         NSDictionary *manifest = nil;
         if (!jsonDict || ![jsonDict isKindOfClass:[NSDictionary class]] ||
-            !(manifest = jsonDict[@"photo_manifest"])) {
+            !(manifest = jsonDict[@"photo_manifest"])) { // Used to be photo_manifest
             NSDictionary *userInfo = nil;
             if (error) { userInfo = @{NSUnderlyingErrorKey : error}; }
             NSError *localError = [NSError errorWithDomain:@"com.BradleyGilmore.Rover.ErrorDomain" code:-1 userInfo:userInfo];
             return completion(nil, localError);
         }
-        
-        completion([[BPGMarsRover alloc] initWithDictionary:manifest], nil);
+        completion([[BPGMarsRover alloc] initWithDictionary:manifest], error);
     }] resume];
 }
 

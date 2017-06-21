@@ -7,7 +7,10 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "BPGMarsRover.h"
 
 @interface BPGSolDatesTableViewController : UITableViewController
+
+@property (nonatomic, strong) BPGMarsRover *rover;
 
 @end
