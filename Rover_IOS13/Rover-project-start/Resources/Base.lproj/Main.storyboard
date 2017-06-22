@@ -120,8 +120,20 @@
                                 <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
                                     <rect key="frame" x="0.0" y="0.0" width="180" height="150"/>
                                     <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="0NT-av-hXZ">
+                                            <rect key="frame" x="0.0" y="0.0" width="180" height="150"/>
+                                        </imageView>
+                                    </subviews>
                                 </view>
+                                <constraints>
+                                    <constraint firstItem="0NT-av-hXZ" firstAttribute="leading" secondItem="1Fx-lN-BkL" secondAttribute="leading" id="OMa-0u-gUW"/>
+                                    <constraint firstAttribute="bottom" secondItem="0NT-av-hXZ" secondAttribute="bottom" id="SeY-gR-lDI"/>
+                                    <constraint firstAttribute="trailing" secondItem="0NT-av-hXZ" secondAttribute="trailing" id="gIk-5i-GtK"/>
+                                    <constraint firstItem="0NT-av-hXZ" firstAttribute="top" secondItem="1Fx-lN-BkL" secondAttribute="top" id="oVO-UE-FDU"/>
+                                </constraints>
                                 <connections>
+                                    <outlet property="imageView" destination="0NT-av-hXZ" id="lBe-pS-Cnf"/>
                                     <segue destination="NYA-mJ-DL9" kind="show" identifier="toDetailView" id="cTt-jj-Tmq"/>
                                 </connections>
                             </collectionViewCell>

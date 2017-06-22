@@ -10,4 +10,6 @@
 
 @interface BPGMarsPhotoCollectionViewCell : UICollectionViewCell
 
+@property (nonatomic, strong) IBOutlet UIImageView *imageView;
+
 @end

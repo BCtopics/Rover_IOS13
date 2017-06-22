@@ -9,6 +9,8 @@
 #import "BPGSolPhotosCollectionViewController.h"
 #import "BPGMarsRover.h"
 #import "BPGMarsRoverClient.h"
+//#import "BPGMarsPhotoDetailViewController.h"
+#import "Rover-Swift.h"
 
 @interface BPGSolPhotosCollectionViewController ()
 
@@ -45,15 +47,19 @@ static NSString * const reuseIdentifier = @"Cell";
     }];
 }
 
-/*
+
 #pragma mark - Navigation
 
-// In a storyboard-based application, you will often want to do a little preparation before navigation
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
+
+    if ([segue.identifier isEqualToString:@"toDetailView"]) {
+        BPGMarsPhotoDetailViewController *detailVC = segue.destinationViewController;
+        NSIndexPath *indexPath = [[self.collectionView indexPathsForSelectedItems] firstObject];
+        detailVC.photo = self.photoReferences[indexPath.row];
+    }
+    
 }
-*/
+
 
 #pragma mark <UICollectionViewDataSource>
 
