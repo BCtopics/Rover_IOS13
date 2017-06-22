@@ -10,4 +10,9 @@
 
 @interface BPGPhotoCache : NSObject
 
+@property (nonatomic, readonly, class) BPGPhotoCache *sharedCache;
+
+- (void)cacheImageData:(NSData *)data forIdentifier:(NSInteger)identifier;
+- (NSData *)imageDataForIdentifier:(NSInteger)identifier;
+
 @end
