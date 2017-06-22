@@ -7,8 +7,13 @@
 //
 
 #import "BPGSolPhotosCollectionViewController.h"
+#import "BPGMarsRover.h"
+#import "BPGMarsRoverClient.h"
 
 @interface BPGSolPhotosCollectionViewController ()
+
+@property (nonatomic, strong, readonly) BPGMarsRoverClient *client;
+@property (nonatomic, copy) NSArray *photoReferences;
 
 @end
 
@@ -19,18 +24,25 @@ static NSString * const reuseIdentifier = @"Cell";
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    // Uncomment the following line to preserve selection between presentations
-    // self.clearsSelectionOnViewWillAppear = NO;
-    
-    // Register cell classes
-    [self.collectionView registerClass:[UICollectionViewCell class] forCellWithReuseIdentifier:reuseIdentifier];
-    
-    // Do any additional setup after loading the view.
+    [self fetchPhotoReferences];
 }
 
-- (void)didReceiveMemoryWarning {
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
+- (void)fetchPhotoReferences
+{
+    if (!self.rover || !self.sol) {
+        return;
+    }
+    
+    BPGMarsRoverClient *client = [[BPGMarsRoverClient alloc] init];
+    [client fetchPhotosFromRover:self.rover onSol:self.sol.sol completion:^(NSArray *photos, NSError *error) {
+        if (error) {
+            NSLog(@"Error getting photo references for %@ on %@: %@", self.rover, self.sol, error);
+            return;
+        }
+        dispatch_async(dispatch_get_main_queue(), ^{
+            self.photoReferences = photos;
+        });
+    }];
 }
 
 /*
@@ -46,7 +58,7 @@ static NSString * const reuseIdentifier = @"Cell";
 #pragma mark <UICollectionViewDataSource>
 
 - (NSInteger)numberOfSectionsInCollectionView:(UICollectionView *)collectionView {
-    return 0;
+    return 1;
 }
 
 
