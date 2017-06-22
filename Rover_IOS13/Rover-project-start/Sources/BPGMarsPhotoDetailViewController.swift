@@ -20,6 +20,7 @@ class BPGMarsPhotoDetailViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        updateViews()
     }
     
     private static let dateFormatter: DateFormatter = {
