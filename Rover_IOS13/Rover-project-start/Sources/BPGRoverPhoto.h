@@ -14,7 +14,7 @@
 
 #pragma mark - Properties
 
-@property (nonatomic, readonly) NSInteger *photoIdentifier;
+@property (nonatomic, readonly) NSInteger photoIdentifier;
 @property (nonatomic, readonly) NSInteger solDateTaken;
 
 @property (nonatomic, readonly, strong) NSString *cameraName;

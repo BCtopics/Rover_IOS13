@@ -151,7 +151,7 @@
         <!--Mars Photo Detail View Controller-->
         <scene sceneID="NO6-Dk-RNO">
             <objects>
-                <viewController id="NYA-mJ-DL9" customClass="BPGMarsPhotoDetailViewController" sceneMemberID="viewController">
+                <viewController id="NYA-mJ-DL9" customClass="BPGMarsPhotoDetailViewController" customModule="Rover" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="TQ6-kT-d1A"/>
                         <viewControllerLayoutGuide type="bottom" id="eoL-vY-ShN"/>
@@ -201,6 +201,12 @@
                             <constraint firstItem="JI1-qH-c6Y" firstAttribute="centerY" secondItem="Sus-n0-swi" secondAttribute="centerY" id="zhF-F0-MBH"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="cameraLabel" destination="dBT-2w-jad" id="DuI-cW-9fJ"/>
+                        <outlet property="dateLabel" destination="4Fe-LG-vGu" id="2yC-Mc-r0f"/>
+                        <outlet property="imageView" destination="bJS-66-DUf" id="7Oy-5S-ANc"/>
+                        <outlet property="solLabel" destination="EC4-ie-FTl" id="m9g-nQ-wab"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="r5o-an-p6P" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

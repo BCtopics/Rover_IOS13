@@ -17,6 +17,16 @@
 
 @implementation BPGPhotoCache
 
++ (instancetype)sharedCache
+{
+    static BPGPhotoCache *sharedCache = nil;
+    static dispatch_once_t onceToken;
+    dispatch_once(&onceToken, ^{
+        sharedCache = [[self alloc] init];
+    });
+    return sharedCache;
+}
+
 - (instancetype)init
 {
     self = [super init];

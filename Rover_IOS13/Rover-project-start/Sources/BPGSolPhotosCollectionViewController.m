@@ -9,7 +9,9 @@
 #import "BPGSolPhotosCollectionViewController.h"
 #import "BPGMarsRover.h"
 #import "BPGMarsRoverClient.h"
-//#import "BPGMarsPhotoDetailViewController.h"
+#import "BPGMarsPhotoCollectionViewCell.h"
+#import "BPGPhotoCache.h"
+#import "BPGRoverPhoto.h"
 #import "Rover-Swift.h"
 
 @interface BPGSolPhotosCollectionViewController ()
@@ -21,7 +23,7 @@
 
 @implementation BPGSolPhotosCollectionViewController
 
-static NSString * const reuseIdentifier = @"Cell";
+static NSString * const reuseIdentifier = @"marsPhotoCell";
 
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -60,7 +62,6 @@ static NSString * const reuseIdentifier = @"Cell";
     
 }
 
-
 #pragma mark <UICollectionViewDataSource>
 
 - (NSInteger)numberOfSectionsInCollectionView:(UICollectionView *)collectionView {
@@ -69,46 +70,74 @@ static NSString * const reuseIdentifier = @"Cell";
 
 
 - (NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section {
-    return 0;
+    return self.photoReferences.count;
 }
 
 - (UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath {
-    UICollectionViewCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:reuseIdentifier forIndexPath:indexPath];
+    BPGMarsPhotoCollectionViewCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:reuseIdentifier forIndexPath:indexPath];
     
-    // Configure the cell
+    BPGRoverPhoto *photo = self.photoReferences[indexPath.row];
+    
+    BPGPhotoCache *cache = [BPGPhotoCache sharedCache];
+    NSData *cachedData = [cache imageDataForIdentifier:photo.photoIdentifier];
+    if (cachedData) {
+        cell.imageView.image = [UIImage imageWithData:cachedData];
+        return cell;
+    } else {
+        cell.imageView.image = [UIImage imageNamed:@"MarsPlaceholder"];
+    }
+    
+    [self.client fetchImageDataForPhoto:photo completion:^(NSData *imageData, NSError *error) {
+        if (error || !imageData) {
+            NSLog(@"Error fetching image data for %@: %@", photo, error);
+            return;
+        }
+        
+        [cache cacheImageData:imageData forIdentifier:photo.photoIdentifier];
+        UIImage *image = [UIImage imageWithData:imageData];
+        
+        dispatch_async(dispatch_get_main_queue(), ^{
+            if (![indexPath isEqual:[collectionView indexPathForCell:cell]]) {
+                return; // Cell has been reused for another photo
+            }
+            cell.imageView.image = image;
+        });
+    }];
     
     return cell;
 }
 
-#pragma mark <UICollectionViewDelegate>
-
-/*
-// Uncomment this method to specify if the specified item should be highlighted during tracking
-- (BOOL)collectionView:(UICollectionView *)collectionView shouldHighlightItemAtIndexPath:(NSIndexPath *)indexPath {
-	return YES;
-}
-*/
-
-/*
-// Uncomment this method to specify if the specified item should be selected
-- (BOOL)collectionView:(UICollectionView *)collectionView shouldSelectItemAtIndexPath:(NSIndexPath *)indexPath {
-    return YES;
-}
-*/
-
-/*
-// Uncomment these methods to specify if an action menu should be displayed for the specified item, and react to actions performed on the item
-- (BOOL)collectionView:(UICollectionView *)collectionView shouldShowMenuForItemAtIndexPath:(NSIndexPath *)indexPath {
-	return NO;
+@synthesize client = _client;
+- (BPGMarsRoverClient *)client
+{
+    if (!_client) {
+        _client = [[BPGMarsRoverClient alloc] init];
+    }
+    return _client;
 }
 
-- (BOOL)collectionView:(UICollectionView *)collectionView canPerformAction:(SEL)action forItemAtIndexPath:(NSIndexPath *)indexPath withSender:(id)sender {
-	return NO;
+- (void)setRover:(BPGMarsRover *)rover
+{
+    if (rover != _rover) {
+        _rover = rover;
+        [self fetchPhotoReferences];
+    }
 }
 
-- (void)collectionView:(UICollectionView *)collectionView performAction:(SEL)action forItemAtIndexPath:(NSIndexPath *)indexPath withSender:(id)sender {
-	
+- (void)setSol:(BPGSol *)sol
+{
+    if (sol != _sol) {
+        _sol = sol;
+        [self fetchPhotoReferences];
+    }
 }
-*/
+
+- (void)setPhotoReferences:(NSArray *)photoReferences
+{
+    if (photoReferences != _photoReferences) {
+        _photoReferences = [photoReferences copy];
+        [self.collectionView reloadData];
+    }
+}
 
 @end

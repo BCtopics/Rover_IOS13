@@ -5,4 +5,4 @@
 #import "BPGRoverPhoto.h"
 #import "BPGMarsRoverClient.h"
 #import "BPGMarsRover.h"
-// Do photo cache
+#import "BPGPhotoCache.h"
